@@ -23,7 +23,7 @@ const Cart = () =>{
 
       return cart.map((item, index) =>(
         <div key={index} className="flex mb-4 border pb-4 bg-white p-6 rounded-xl shadow-md">
-          <img src={`http://localhost:3000${item.productImg}`} alt={item.productName} className="w-24 h-24 object-cover mr-4"/>
+          <img src={require(`../../image/${item.productImg}`)} alt={item.productName} className="w-24 h-24 object-cover mr-4"/>
           <div className="flex-1">
             <h3 className="text-xl mb-2 font-bold">{item.productName}</h3>
             {/* <p className="mb-2">{product.description}</p>  can add product description if needed */}
