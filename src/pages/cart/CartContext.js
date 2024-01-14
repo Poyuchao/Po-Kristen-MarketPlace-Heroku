@@ -32,7 +32,7 @@ export const CartProvider = ({children}) => {
 
     const fetchCart = async () => {
         try {
-            const response = await axios.get('http://localhost:3001/api/cart', {
+            const response = await axios.get('https://marketplace-server-ffee7f362eb3.herokuapp.com/api/cart', {
                 params: { username: userData.username }
             });
             console.log('check and ',response);
@@ -47,7 +47,7 @@ export const CartProvider = ({children}) => {
         if (isLoggedIn) {
             try {
                 console.log('add',product,userData.username)
-                await axios.post('http://localhost:3001/api/cart/add', 
+                await axios.post('https://marketplace-server-ffee7f362eb3.herokuapp.com/api/cart/add', 
                     { 
                         username: userData.username, 
                         product 
@@ -86,7 +86,7 @@ export const CartProvider = ({children}) => {
         if (isLoggedIn) {
             try {
                 // Send a request to the server to increase the quantity
-                await axios.post('http://localhost:3001/api/cart/increaseQuantity', {
+                await axios.post('https://marketplace-server-ffee7f362eb3.herokuapp.com/api/cart/increaseQuantity', {
                     username: userData.username,
                     productName: productName
                 });
@@ -115,7 +115,7 @@ export const CartProvider = ({children}) => {
     const decreaseQuantity = async (productName) => {
         if (isLoggedIn) {
             try {
-                await axios.post('http://localhost:3001/api/cart/decreaseQuantity', {
+                await axios.post('https://marketplace-server-ffee7f362eb3.herokuapp.com/api/cart/decreaseQuantity', {
                     username: userData.username,
                     productName: productName
                 });
@@ -143,7 +143,7 @@ export const CartProvider = ({children}) => {
         if (isLoggedIn) {
             try {
                 // Send a request to the server to remove the product
-                await axios.post('http://localhost:3001/api/cart/remove', {
+                await axios.post('https://marketplace-server-ffee7f362eb3.herokuapp.com/api/cart/remove', {
                     username: userData.username,
                     productName: productName
                 });
@@ -168,7 +168,7 @@ export const CartProvider = ({children}) => {
         if (isLoggedIn) {
             try {
                 // Send a request to the server to reset the cart
-                await axios.post('http://localhost:3001/api/cart/resetCart', {
+                await axios.post('https://marketplace-server-ffee7f362eb3.herokuapp.com/api/cart/resetCart', {
                     username: userData.username,
                 });
                 // Fetch the updated cart from the server
@@ -187,7 +187,7 @@ export const CartProvider = ({children}) => {
         // Save the cart before logging out
         if (userData) {
             try {
-                await axios.post('http://localhost:3001/api/cart/save', {
+                await axios.post('https://marketplace-server-ffee7f362eb3.herokuapp.com/api/cart/save', {
                     username: userData.username,
                     cart: cart
                 });

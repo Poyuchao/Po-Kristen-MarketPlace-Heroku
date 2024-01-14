@@ -58,7 +58,7 @@ const Reset = () => {
         }
 
         try {
-            const response = await axios.post('http://localhost:3001/reset', {
+            const response = await axios.post('https://marketplace-server-ffee7f362eb3.herokuapp.com/reset', {
                 verificationCode,
                 newPassword
             })

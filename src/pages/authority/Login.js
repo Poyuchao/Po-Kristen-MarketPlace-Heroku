@@ -35,7 +35,7 @@ const Login = () => {
     setErrorMessage('');
   
     // Send a POST request to the login endpoint
-    axios.post('http://localhost:3001/login', { username, password })
+    axios.post('https://marketplace-server-ffee7f362eb3.herokuapp.com/login', { username, password })
       .then((response) => {
         // Check for successful login response
         if (response.status === 200 && response.data.message === "Success") {

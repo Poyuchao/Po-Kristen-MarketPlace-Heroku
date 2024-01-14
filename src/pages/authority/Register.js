@@ -115,7 +115,7 @@ const Register = () => {
       }
     
       // If there are no errors, proceed with form submission
-      axios.post('http://localhost:3001/register', { username, email, password, gender })
+      axios.post('https://marketplace-server-ffee7f362eb3.herokuapp.com/register', { username, email, password, gender })
       .then((result) => {
           console.log(result);
           navigate('/login');

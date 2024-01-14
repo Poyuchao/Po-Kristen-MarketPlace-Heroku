@@ -13,7 +13,7 @@ const ForgetPassword = () => {
     
     const handleSubmit = async () => {
         try {
-            const response = await axios.post('http://localhost:3001/ForgetPassword', { email });
+            const response = await axios.post('https://marketplace-server-ffee7f362eb3.herokuapp.com/ForgetPassword', { email });
             if (response.status === 200) {
                 // Navigate to the reset password page
                 alert('Verification code has been sent !');
