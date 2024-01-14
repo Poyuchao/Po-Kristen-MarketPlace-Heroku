@@ -22,7 +22,6 @@ const ProductPage = () => {
     useEffect(() => {
 
         
-
             // Extract the category from query parameters
         const queryParams = new URLSearchParams(location.search);
         const categoryFromURL = queryParams.get('category');
@@ -35,7 +34,8 @@ const ProductPage = () => {
 
 
         // Fetch product data from a local server running on port 3000.
-        fetch('http://localhost:3000/products')
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/products`)
+
             .then(response => {
               // Check for unsuccessful network responses.
                 if (!response.ok) {
@@ -104,7 +104,8 @@ const ProductPage = () => {
                             <div className="mt-5">
                                 <div className="mb-5 flex justify-center items-center mx-auto" style={{ width: '90%' }}>
                                 <div className="w-64 h-64 relative overflow-hidden rounded">
-                                <img className=" absolute inset-0 w-full h-full object-cover transition-all hover:scale-110" src={`http://localhost:3000${product.productImg}`} alt={product.productName} />
+                                <img className="absolute inset-0 w-full h-full object-cover transition-all hover:scale-110" src={`${process.env.REACT_APP_BACKEND_URL}${product.productImg}`} alt={product.productName} />
+
                                 </div>
                                 </div>
                                 <p className="mb-2 text-xl font-bold text-center">{product.productName}</p>
